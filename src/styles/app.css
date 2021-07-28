@@ -24,6 +24,15 @@ h4 {
   color: #646464;
 }
 
+.App {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.library-active {
+  margin-left: 10%;
+}
+
 .player {
   min-height: 20vh;
   display: -webkit-box;
@@ -50,6 +59,7 @@ h4 {
 .time-control input {
   width: 100%;
   padding: 1rem 0rem;
+  cursor: pointer;
 }
 .time-control p {
   padding: 1rem;
@@ -72,6 +82,15 @@ h4 {
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 90%;
+  }
+
+  .play-control {
+    width: 60%;
+  }
+}
 .song-container {
   min-height: 60vh;
   display: -webkit-box;
@@ -99,6 +118,11 @@ h4 {
   font-size: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+  .song-container img {
+    width: 60%;
+  }
+}
 .library {
   position: fixed;
   top: 0;
@@ -109,6 +133,11 @@ h4 {
   -webkit-box-shadow: 2px 2px 50px gray;
           box-shadow: 2px 2px 50px gray;
   overflow: scroll;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
 }
 .library h2 {
   padding: 2rem;
@@ -163,5 +192,46 @@ h4 {
 
 .selected {
   background: #a5b5e4;
+}
+
+.active-library {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
+}
+nav {
+  min-height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+nav button {
+  background: transparent;
+  border: none;
+  border: 2px solid #414141;
+  padding: 0.5rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+nav button:hover {
+  background: #414141;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  nav button {
+    z-index: 10;
+  }
 }
 /*# sourceMappingURL=app.css.map */
